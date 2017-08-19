@@ -5,6 +5,8 @@ if(window.location.hash) {
   
   $.ajax({
   url: Instaurl,
+  dataType: 'jsonp',
+	type: 'GET',
 })
   .done(function( data ) {
     if ( console && console.log ) {
