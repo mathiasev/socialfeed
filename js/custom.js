@@ -10,7 +10,7 @@ if(window.location.hash) {
 })
   .done(function( data ) {
 	  
-	  for (var key in data[0]) {
+	  for (var key in data[1]) {
     // skip loop if the property is from prototype
     if (!data.hasOwnProperty(key)) continue;
 
