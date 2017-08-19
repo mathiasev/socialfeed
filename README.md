@@ -1,5 +1,4 @@
-
-#Stack
+#Stack#
 
 A new social feed aggregator
 =========
@@ -16,5 +15,5 @@ What if we made it easier?
 Not only that, you actually get to see what your friends are posting, not what we think you 'may like based on your recent activity'.
 
 
-###Credit for cool stuff
+###Credit for cool stuff###
 Thanks to [Codrops](http://www.codrops.com) for the great stack template
