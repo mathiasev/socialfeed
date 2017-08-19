@@ -22,7 +22,7 @@ $instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
 						'client_secret' => '2caa337ca8484384913b300e684bfc0d',
 						'grant_type' => 'authorization_code',
 						'redirect_uri' => 'http://13.59.66.63/socialfeed/',
-						'code' => $_GET['code'],
+						'code' => $_GET['code']
 						);
 
 $instaBodyAPI = json_encode($instagramBody);
