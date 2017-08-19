@@ -9,9 +9,7 @@ if(window.location.hash) {
 	type: 'GET',
 })
   .done(function( data ) {
-    if ( console && console.log ) {
-      console.log( "Sample of data:", data.slice( 0, 100 ) );
-    }
+    console.log(data);
   });
   
 } else {
