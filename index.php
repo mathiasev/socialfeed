@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php 
+
+/* ---- Set up CURL ---- */
+function getCURL($req_body, $req_url) {
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, $req_url); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+		curl_setopt($ch, CURLOPT_POST,1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $req_body);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($req_format_body)) );
+        $output = curl_exec($ch); 
+        curl_close($ch);
+    return $output;
+}
+
+/* ---- Build Instagram oAuth Body ---- */
+$instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
+						'client_secret' => '2caa337ca8484384913b300e684bfc0d',
+						'grant_type' => 'authorization_code',
+						'redirect_uri' => 'http://13.59.66.63/socialfeed',
+						'code' => $_POST['code'],
+					);
+echo $instagramBodyFormat = http_build_query($instagramBody);
+
+?><!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
