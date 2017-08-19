@@ -6,7 +6,7 @@ function getCURL($req_body, $req_url) {
 	$ch = curl_init();
 	    curl_setopt($ch, CURLOPT_URL, $req_url);
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $req_body);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, '[' . $req_body . ']');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");  
