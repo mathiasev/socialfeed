@@ -36,6 +36,7 @@
 	border-color: #fff;
 	box-shadow: 0 10px 7px -7px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.1);
 	opacity: 0;
+	background-color:#ffffff;
 	cursor: pointer;
 	-webkit-transform: translate3d(0,0,-180px);
 	transform: translate3d(0,0,-180px);
