@@ -14,6 +14,7 @@ function getCURL($req_body, $req_url) {
 }
 
 print_r($_POST);
+print_r($_GET);
 /* ---- Build Instagram oAuth Body ---- */
 $instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
 						'client_secret' => '2caa337ca8484384913b300e684bfc0d',
