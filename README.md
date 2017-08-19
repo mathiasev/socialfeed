@@ -1,16 +1,20 @@
 
-Elastic Stack - Elastic dragging interaction
+#Stack
+
+A new social feed aggregator
 =========
 
-ElastiStack is a little script that let's you navigate through a stack of items by dragging away the first one. It comes with an elastic touch meaning that when dragging the top-most item, the other ones will follow as if they were connected elastically. When reaching a certain distance, the dragged item will release itself and the next item will pop out. 
+This is the way it usually goes:
+1. You open Social App #1
+2. You scroll through this app until you either: 1, get bored, or 2, reach the place you've been before
+3. You then close this app, and switch to the next one.
 
-[Article on Codrops](http://tympanus.net/codrops/?p=17004)
+What if we made it easier?
 
-[Demo](http://tympanus.net/Development/ElasticStack/)
+*Stack takes all your social apps, and pulls them together.*
 
-Integrate or build upon it for free in your personal or commercial projects. Don't republish, redistribute or sell "as-is". 
-
-Read more here: [License](http://tympanus.net/codrops/licensing/)
+Not only that, you actually get to see what your friends are posting, not what we think you 'may like based on your recent activity'.
 
 
-[© Codrops 2013](http://www.codrops.com)
+###Credit for cool stuff
+Thanks to [Codrops](http://www.codrops.com) for the great stack template
