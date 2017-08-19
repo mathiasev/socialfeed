@@ -27,6 +27,8 @@ $instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
 
 $instaBodyAPI = json_encode($instagramBody);
 
+print_r($instaBodyAPI);
+exit;
 $instagramAuthorised = getCURL($instaBodyAPI, 'https://api.instagram.com/oauth/access_token');
 
 print_r($instagramAuthorised);
