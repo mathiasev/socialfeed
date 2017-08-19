@@ -9,7 +9,8 @@ if(window.location.hash) {
 	type: 'GET',
 })
   .done(function( data ) {
-   $('#elasticstack').html('<li>' + data + '</li>');
+	  var obj = JSON.parse(data);
+   $('#elasticstack').html('<li>' + JSON.parse(data) + '</li>');
   });
   
 } else {
