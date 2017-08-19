@@ -10,6 +10,19 @@ if(window.location.hash) {
 })
   .done(function( data ) {
 	  
+	  for (var key in data) {
+    // skip loop if the property is from prototype
+    if (!validation_messages.hasOwnProperty(key)) continue;
+
+    var obj = validation_messages[key];
+    for (var prop in obj) {
+        // skip loop if the property is from prototype
+        if(!obj.hasOwnProperty(prop)) continue;
+
+        // your code
+        alert(prop + " = " + obj[prop]);
+    }
+}
    $('#elasticstack').html('<li>' + data.data + '</li>');
   });
   
