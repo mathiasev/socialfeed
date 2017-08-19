@@ -5,7 +5,7 @@ class Stack {
 	private $instagramAccessToken = 'UNAUTHOURISED';
 	private $alive = false;
 
-	function isAlive(
+	function isAlive() {
 		return $this->alive;
 	}
 	
@@ -65,9 +65,13 @@ private function getEndpoint($req_url) {
 			<!-- Top Navigation -->
 			<ul id="elasticstack" class="elasticstack">
 				<?php
-					(isset($_GET['code'])) ? $stack->setAuthCode($_GET['code']) : echo '<li><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></li>'; 
+					if( isset($_GET['code']) ): 
+						$stack->setAuthCode($_GET['code']); 
+					else:
+						echo '<li><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></li>'; 
+					endif; 
 					
-					($stack->isAlive) ? $stack->getPosts(); 
+					if($stack->isAlive()): $stack->getPosts(); endif; 
 				?>
 			</ul>
 		</div><!-- /container -->
