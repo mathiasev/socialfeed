@@ -18,8 +18,8 @@ function getCURL($req_body, $req_url) {
 if(isset($_GET['code'])) :
 /* ---- Build Instagram oAuth Body ---- */
 $instagramBody = '?client_id=ddc788c63b2a444ca2898f6acaa88780&client_secret=2caa337ca8484384913b300e684bfc0d&grant_type=authorization_code&redirect_uri=http://13.59.66.63/socialfeed&code=' . $_GET['code'];
-echo $instagramBodyFormat = http_build_query($instagramBody);
-
+$instagramBodyFormat = http_build_query($instagramBody);
+echo $instagramBodyFormat;
 $instagramAuthorised = getCURL($instagramBodyFormat, 'https://api.instagram.com/oauth/access_token/');
 
 print_r($instagramAuthorised);
