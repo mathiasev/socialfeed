@@ -21,7 +21,7 @@ $instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
 						'redirect_uri' => 'http://13.59.66.63/socialfeed',
 						'code' => $_GET['code'],
 					);
-$instagramBodyFormat = http_build_query($instagramBody);
+$instagramBodyFormat = json_encode($instagramBody);
 
 $instagramAuthorised = getCURL($instagramBodyFormat, 'https://api.instagram.com/oauth/access_token/');
 
