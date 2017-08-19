@@ -12,9 +12,9 @@ if(window.location.hash) {
 	  
 	  for (var key in data) {
     // skip loop if the property is from prototype
-    if (!validation_messages.hasOwnProperty(key)) continue;
+    if (!data.hasOwnProperty(key)) continue;
 
-    var obj = validation_messages[key];
+    var obj = data[key];
     for (var prop in obj) {
         // skip loop if the property is from prototype
         if(!obj.hasOwnProperty(prop)) continue;
