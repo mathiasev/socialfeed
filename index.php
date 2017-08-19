@@ -5,10 +5,12 @@ function getCURL($req_body, $req_url) {
 			
 	$ch = curl_init();
 	    curl_setopt($ch, CURLOPT_URL, $req_url);
-    curl_setopt($ch, CURLOPT_POST, count($req_body));
+    curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $req_body);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");  
+
     
     $jsonData = curl_exec($ch);
     curl_close($ch);
@@ -25,10 +27,9 @@ $instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
 						'code' => $_GET['code']
 						);
 
-$instaBodyAPI = http_build_query(json_encode($instagramBody));
+$instaBodyAPI = json_encode($instagramBody);
 
 print_r($instaBodyAPI);
-exit;
 $instagramAuthorised = getCURL($instaBodyAPI, 'https://api.instagram.com/oauth/access_token');
 
 print_r($instagramAuthorised);
