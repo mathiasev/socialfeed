@@ -10,7 +10,7 @@ if(window.location.hash) {
 })
   .done(function( data ) {
 	  
-   $('#elasticstack').html('<li>' + JSON.parse(data.data) + '</li>');
+   $('#elasticstack').html('<li>' + data.data + '</li>');
   });
   
 } else {
