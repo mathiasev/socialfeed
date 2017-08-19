@@ -9,7 +9,7 @@ if(window.location.hash) {
 	type: 'GET',
 })
   .done(function( data ) {
-	  var obj = JSON.parse(data);
+	  
    $('#elasticstack').html('<li>' + JSON.parse(data) + '</li>');
   });
   
