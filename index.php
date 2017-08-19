@@ -1,12 +1,35 @@
 <?php 
+$stack = new Stack();
+
+class Stack {
+	private $instagramAccessToken = 'UNAUTHOURISED';
+	private $alive = false;
+
+	function isAlive(
+		return $this->alive;
+	}
+	
+	function setAuthCode($authCode) {
+		$this->instagramAccessToken = $authCode;
+	}
+	
+	
+	function getPosts() {
+		
+		$friends = getFriends();
+		
+	}
+	
+	private function getFriends() {
+	$friends = getEndpoint('https://api.instagram.com/v1/users/self/follows');
+	print_r($friends);
+}
 
 /* ---- Set up CURL ---- */
-function getCURL($req_body, $req_url) {
-			
+private function getEndpoint($req_url) {
 	$ch = curl_init();
-	    curl_setopt($ch, CURLOPT_URL, $req_url);
+	    curl_setopt($ch, CURLOPT_URL, $req_url . '?access_token=' . $this->instagramAccessToken);
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, '[' . $req_body . ']');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	
@@ -16,22 +39,12 @@ function getCURL($req_body, $req_url) {
     return $output;
 }
 
-if(isset($_GET['code'])) :
-/* ---- Build Instagram oAuth Body ---- */
-$instagramBody = array( 'client_id' => 'ddc788c63b2a444ca2898f6acaa88780',
-						'client_secret' => '2caa337ca8484384913b300e684bfc0d',
-						'grant_type' => 'authorization_code',
-						'redirect_uri' => 'http://13.59.66.63/socialfeed/',
-						'code' => $_GET['code']
-						);
+}
 
-$instaBodyAPI = json_encode($instagramBody);
 
-print_r($instaBodyAPI);
-$instagramAuthorised = getCURL($instaBodyAPI, 'https://api.instagram.com/oauth/access_token');
 
-print_r($instagramAuthorised);
-endif;
+
+
 
 ?><!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -51,7 +64,11 @@ endif;
 		<div class="container">
 			<!-- Top Navigation -->
 			<ul id="elasticstack" class="elasticstack">
-				<li><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=code&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></li>
+				<?php
+					(isset($_GET['code'])) ? $stack->setAuthCode($_GET['code']) : echo '<li><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></li>'; 
+					
+					($stack->isAlive) ? $stack->getPosts(); 
+				?>
 			</ul>
 		</div><!-- /container -->
 		<script src="js/draggabilly.pkgd.min.js"></script>
