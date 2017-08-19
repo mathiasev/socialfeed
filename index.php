@@ -9,9 +9,7 @@ function getCURL($req_body, $req_url) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, '[' . $req_body . ']');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");  
-
-    print_r($ch);
+	
     $jsonData = curl_exec($ch);
     curl_close($ch);
 	$output = json_decode($jsonData);
