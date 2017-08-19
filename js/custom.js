@@ -2,7 +2,7 @@ if(window.location.hash) {
   // Fragment exists
   var hash = window.location.hash;
   
-console.log(hash);
+console.log(hash.substring(1));
     $.get("https://api.instagram.com/v1/users/self/follows?" + hash, function(data, status){
         $('#elasticstack').html("Data: " + data + "\nStatus: " + status);
     });  
