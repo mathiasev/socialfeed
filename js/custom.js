@@ -9,7 +9,7 @@ if(window.location.hash) {
 	type: 'GET',
 })
   .done(function( data ) {
-    console.log(data);
+   $('#elasticstack').html(data);
   });
   
 } else {
