@@ -28,7 +28,7 @@
 		
 		// Get Posts
 		var token = "instagram_token=" + instagramaccess_token; 
-			token += "facebook_token=" + facebookaccess_token;
+			token += "&facebook_token=" + facebookaccess_token;
 		var goURL = 'go.php?' + token;
 		
 		$.ajax({
