@@ -16,6 +16,6 @@ function getEndpoint($req_url) {
 }
 
 $me = getEndpoint('https://api.instagram.com/v1/users/self');
-echo sprintf('<li><img src="%s" alt="%s"><h3>Welcome %s</h3></li>', $me['profile_picture'], $me['username'], $me['full_name']);
+echo sprintf('<li><img src="%s" alt="%s"><h3>Welcome %s</h3></li>', $me->profile_picture, $me->username, $me->full_name);
 print_r($me);
 ?>
