@@ -10,7 +10,7 @@ if(window.location.hash) {
 	  
 
    $('#elasticstack').html(data);
-   ElastiStack( document.getElementById( 'elasticstack' ) );
+new ElastiStack( document.getElementById( 'elasticstack' ) );
   });
   
 } else {

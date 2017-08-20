@@ -18,3 +18,7 @@ body {
 #elasticstack {
 	    margin: auto !important;		
 }
+
+#elasticstack li {
+	color: #4c4c4c;
+}
