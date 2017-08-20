@@ -3,6 +3,7 @@
 $accessToken = (isset($_GET['token'])) ? $_GET['token'] : 'No Access Token';
 
 function getEndpoint($req_url) {
+	global $accessToken;
         $ch = curl_init(); 
 		echo $authURL = $req_url . '?' . $accessToken;
         curl_setopt($ch, CURLOPT_URL, $authURL); 
