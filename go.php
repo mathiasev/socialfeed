@@ -31,7 +31,7 @@ class Stack {
 		$this->getInstagramPosts();
 				
 		foreach ($this->posts as $post) :
-			echo sprintf('<li><div class="imageHolder"><img src="%s" alt="%s"></div><div class="caption"><h2>%s</h2><p>%s</p></div></li>', $post->theImage(),$post->theContent(), $post->theTitle(), $post->theContent());
+			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><h2>%s</h2><p>%s</p></div></li>', $post->theImage(),$post->theContent(), $post->theTitle(), $post->theContent());
 		endforeach;
 	}
 	
