@@ -69,8 +69,7 @@ class Stack {
 		$me = $this->getInstagramEndpoint('https://api.instagram.com/v1/users/self');
 		$me = $me->data;
 		/* Ask for Facebook Access details */
-		$fbString = '<p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p>';
-		echo sprintf('<li><img src="%s" alt="%s"><h1>Welcome %s</h1>%s</li>', $me->profile_picture, $me->username, $me->full_name, $fbString);
+		echo sprintf('<li><img src="%s" alt="%s"><h1>Welcome %s</h1></li>', $me->profile_picture, $me->username, $me->full_name);
 	}
 }
 
@@ -107,7 +106,7 @@ class Post {
 }
 
 $stack = new Stack();
-$stack->setInstagramAccessToken((isset($_GET['token'])) ? $_GET['token'] : 'No Access Token');
+$stack->setInstagramAccessToken((isset($_GET['instagram_token'])) ? $_GET['instagram_token'] : 'No Access Token');
 $stack->getProfile();
 $stack->getPosts();
 
