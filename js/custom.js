@@ -54,7 +54,7 @@ if(instagramaccess_token == null) {
 } else {
 	
 	
-	if (facebookaccess_token != 'undefined' && instagramaccess_token != 'undefined') {
+	if (facebookaccess_token != null && instagramaccess_token != null) {
 		console.log("Facebook Token: " + facebookaccess_token);
 		console.log("Instagram Token: " + instagramaccess_token);
 		
@@ -73,7 +73,7 @@ if(instagramaccess_token == null) {
 		});
 
 	}
-	else if (facebookaccess_token == 'undefined') {
+	else if (facebookaccess_token == null) {
 		// Sign in with Facebook 
 		$('#elasticstack').html('<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>');
 
