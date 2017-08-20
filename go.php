@@ -57,7 +57,7 @@ class Stack {
 		foreach ($posts as $post):
 		
 			$this->posts[] = new Post('',
-									$post->caption->text,
+									(isset($post->caption)) ? $post->caption : '',
 									$post->images->standard_resolution->url,
 									$post->created_time, 
 									$post->user->username);
