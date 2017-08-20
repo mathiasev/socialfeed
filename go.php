@@ -14,7 +14,7 @@ class Stack {
 	
 	/* Get Data from Instagram */
 	private function getInstagramEndpoint($_req_url) {
-		$authURL = $_req_url . '?' . $this->instaAccessToken;
+		echo $authURL = $_req_url . '?' . $this->instaAccessToken;
         
 		$ch = curl_init(); 
         curl_setopt($ch, CURLOPT_URL, $authURL); 
@@ -106,7 +106,6 @@ class Post {
 }
 
 $stack = new Stack();
-print_r($_GET);
 $stack->setInstagramAccessToken((isset($_GET['instagram_token'])) ? $_GET['instagram_token'] : 'No Access Token');
 $stack->getProfile();
 $stack->getPosts();
