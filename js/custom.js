@@ -46,7 +46,13 @@ var cookies = document.cookie;
 	var instagramaccess_token = getCookie('instagramaccess_token');
 	var facebookaccess_token = getCookie('fbsr_879355528897757');
 
-if(instagramaccess_token != 'undefined') { 
+if(instagramaccess_token == 'undefined') { 
+	
+	// Get Instagram sign in
+		$('#elasticstack').html('<li><p><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></p></li>');
+
+} else {
+	
 	console.log("Cookies Exist: " + cookies);
 	
 	if (facebookaccess_token != 'undefined' && instagramaccess_token != 'undefined') {
@@ -72,11 +78,7 @@ if(instagramaccess_token != 'undefined') {
 		// Sign in with Facebook 
 		$('#elasticstack').html('<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>');
 
-	}
-} else {
-	// Get Instagram sign in
-		$('#elasticstack').html('<li><p><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></p></li>');
-}
+	}}
 	
 	
 
