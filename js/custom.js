@@ -22,9 +22,23 @@
     logInWithFacebook = function() {
     FB.login(function(response) {
       if (response.authResponse) {
-        alert('You are logged in &amp; cookie set!');
-        // Now you can redirect the user or do an AJAX request to
-        // a PHP script that grabs the signed request from the cookie.
+        
+		console.log("Facebook Token: " + facebookaccess_token);
+		console.log("Instagram Token: " + instagramaccess_token);
+		
+		// Get Posts
+		var token = "instagram_token=" + instagramaccess_token; 
+			token += "facebook_token=" + facebookaccess_token;
+		var goURL = 'go.php?' + token;
+		
+		$.ajax({
+		  url: goURL,
+		  type: 'POST'
+		})
+		.done(function( data ) {
+			$('#elasticstack').html(data);
+			new ElastiStack( document.getElementById( 'elasticstack' ) );
+		});
       } else {
         alert('User cancelled login or did not fully authorize.');
       }
@@ -51,29 +65,7 @@ if(instagramaccess_token == null) {
 	// Get Instagram sign in
 		$('#elasticstack').html('<li><p><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></p></li>');
 
-} else {
-	
-	
-	if (facebookaccess_token != null && instagramaccess_token != null) {
-		console.log("Facebook Token: " + facebookaccess_token);
-		console.log("Instagram Token: " + instagramaccess_token);
-		
-		// Get Posts
-		var token = "instagram_token=" + instagramaccess_token; 
-			token += "facebook_token=" + facebookaccess_token;
-		var goURL = 'go.php?' + token;
-		
-		$.ajax({
-		  url: goURL,
-		  type: 'POST'
-		})
-		.done(function( data ) {
-			$('#elasticstack').html(data);
-			new ElastiStack( document.getElementById( 'elasticstack' ) );
-		});
-
-	}
-	else if (facebookaccess_token == null) {
+} else if (facebookaccess_token == null) {
 		// Sign in with Facebook 
 		$('#elasticstack').html('<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>');
 
