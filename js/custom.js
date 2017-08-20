@@ -1,24 +1,17 @@
 if(window.location.hash) {
   // Fragment exists
   var hash = window.location.hash;
-  var Instaurl = "https://api.instagram.com/v1/users/self/follows?" + hash.substring(1);
-  
+  var goURL = 'go.php?token=' + hash.substring(1);
   $.ajax({
-  url: Instaurl,
-  dataType: 'jsonp',
-	type: 'GET',
-})
+	  url: goURL,
+	  dataType: 'jsonp',
+	  type: 'GET'
+  })
   .done(function( data ) {
 	  
-	 
-    
-    for (var prop in data[0]) {
-		for (var obj in prop) {
-        alert(prop + " = " + obj[prop]);
-		}
-    }
 
-   $('#elasticstack').html('<li>' + data.data + '</li>');
+   $('#elasticstack').html(data);
+   ElastiStack( document.getElementById( 'elasticstack' ) );
   });
   
 } else {
