@@ -4,7 +4,7 @@ $accessToken = (isset($_GET['token'])) ? $_GET['token'] : 'No Access Token';
 
 function getEndpoint($req_url) {
         $ch = curl_init(); 
-		$authURL = $req_url . '?' . $accessToken;
+		echo $authURL = $req_url . '?' . $accessToken;
         curl_setopt($ch, CURLOPT_URL, $authURL); 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         $output = curl_exec($ch); 
