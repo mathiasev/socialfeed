@@ -15,33 +15,12 @@ body {
     width: 100vw;
 }
 
+
+
 #elasticstack {
 	margin: auto;
 	width: 60vw;
 	height: 80vh;
-}
-
-@media screen and (max-width: 600px) {
-	#elasticstack {
-	width: 90vw;
-	height: 90vh;
-}
-#elasticstack li {
-	width: 90vw;
-	height: 90vh;
-}
-		.imageHolder {
-    width: 100%;
-    overflow: hidden;
-    float: left;
-    height: 80%;
-}
-.caption {
-    width: 100%;
-	height:20%;
-    float: right;
-    padding: 20px;
-}
 }
 
 #elasticstack li {
@@ -56,6 +35,7 @@ body {
     overflow: hidden;
     float: left;
     height: 100%;
+	background-size: cover;
 }
 
 .imageHolder img {
@@ -68,4 +48,31 @@ body {
     width: 40%;
     float: right;
     padding: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+	#elasticstack {
+		width: 90vw;
+		height: 90vh;
+	}
+
+	#elasticstack li {
+		width: 90vw;
+		height: 90vh;
+	}
+	.imageHolder {
+		width: 100%;
+		overflow: hidden;
+		float: left;
+		height: auto;
+		min-height: 49vh;
+	}
+	
+	.caption {
+		width: 100%;
+		height:auto;
+		min-height: 39vh;
+
+	}
 }
