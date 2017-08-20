@@ -59,7 +59,7 @@ class Stack {
 			$this->posts[] = new Post('',
 									$post->caption->text,
 									$post->images->standard_resolution->url,
-									$post->caption->created_time, 
+									$post->created_time, 
 									$post->user->username);
 		endforeach;
 	}
