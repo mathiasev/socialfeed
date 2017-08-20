@@ -43,12 +43,13 @@ if(window.location.hash) {
 } 
  
 var cookies = document.cookie;
-if(cookies) { 
-	console.log("Cookies Exist: " + cookies);
 	var instagramaccess_token = getCookie('instagramaccess_token');
 	var facebookaccess_token = getCookie('fbsr_879355528897757');
+
+if(instagramaccess_token != 'undefined') { 
+	console.log("Cookies Exist: " + cookies);
 	
-	if (facebookaccess_token != '' && instagramaccess_token != '') {
+	if (facebookaccess_token != 'undefined' && instagramaccess_token != 'undefined') {
 		console.log("Facebook Token: " + facebookaccess_token);
 		console.log("Instagram Token: " + instagramaccess_token);
 		
@@ -67,7 +68,7 @@ if(cookies) {
 		});
 
 	}
-	else if (facebookaccess_token == '') {
+	else if (facebookaccess_token == 'undefined') {
 		// Sign in with Facebook 
 		$('#elasticstack').html('<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>');
 
