@@ -16,9 +16,33 @@ body {
 }
 
 #elasticstack {
-	    margin: auto !important;		
+	margin: auto;
+	width: 60vw;
+	height: 80vh;
 }
 
 #elasticstack li {
 	color: #4c4c4c;
+	border-width:0;
+	width: 60vw;
+	height: 80vh;
+}
+
+.imageHolder {
+    width: 60%;
+    overflow: hidden;
+    float: left;
+    height: 100%;
+}
+
+.imageHolder img {
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+}
+
+.caption {
+    width: 40%;
+    float: right;
+    padding: 20px;
 }
