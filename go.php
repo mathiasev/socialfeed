@@ -1,8 +1,5 @@
 <?php 
-echo 'GET';
-print_r($_GET);
+$returnArr = array('GET' => print_r($_GET), 'POST' => print_r($_POST));
 
-
-echo 'POST';
-print_r($_POST);
+echo json_encode($returnArr);
 ?>
