@@ -106,6 +106,7 @@ class Post {
 }
 
 $stack = new Stack();
+print_r($_GET);
 $stack->setInstagramAccessToken((isset($_GET['instagram_token'])) ? $_GET['instagram_token'] : 'No Access Token');
 $stack->getProfile();
 $stack->getPosts();
