@@ -4,8 +4,7 @@ if(window.location.hash) {
   var goURL = 'go.php?token=' + hash.substring(1);
   $.ajax({
 	  url: goURL,
-	  dataType: 'jsonp',
-	  type: 'GET'
+	  type: 'POST'
   })
   .done(function( data ) {
 	  
