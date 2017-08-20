@@ -69,7 +69,7 @@ if(instagramaccess_token == null) {
 		// Sign in with Facebook 
 		$('#elasticstack').html('<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>');
 
-	}}
+	}
 	
 	
 
