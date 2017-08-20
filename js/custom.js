@@ -53,7 +53,6 @@ if(instagramaccess_token == 'undefined') {
 
 } else {
 	
-	console.log("Cookies Exist: " + cookies);
 	
 	if (facebookaccess_token != 'undefined' && instagramaccess_token != 'undefined') {
 		console.log("Facebook Token: " + facebookaccess_token);
