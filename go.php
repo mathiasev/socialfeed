@@ -1,6 +1,6 @@
 <?php 
 
-$accessToken = (isset($_GET['token')) ? $_GET['token'] : 'No Access Token';
+$accessToken = (isset($_GET['token'])) ? $_GET['token'] : 'No Access Token';
 
 function getEndpoint($req_url) {
         $ch = curl_init(); 
