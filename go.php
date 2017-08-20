@@ -14,7 +14,7 @@ class Stack {
 	
 	/* Get Data from Instagram */
 	private function getInstagramEndpoint($_req_url) {
-		echo $authURL = $_req_url . '?' . $this->instaAccessToken;
+		$authURL = $_req_url . '?' . $this->instaAccessToken;
         
 		$ch = curl_init(); 
         curl_setopt($ch, CURLOPT_URL, $authURL); 
