@@ -70,7 +70,7 @@ class Stack {
 class Post {
 	private $title, $content, $image, $postdate, $author;
 	
-	__construct ($_title, $_content, $_image, $_date, $_author) {
+	function __construct ($_title, $_content, $_image, $_date, $_author) {
 		$this->title 	= $_title;
 		$this->content 	= $_content;
 		$this->image	= $_image;
