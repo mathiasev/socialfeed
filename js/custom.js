@@ -44,11 +44,13 @@ if(window.location.hash) {
  
 var cookies = document.cookie;
 if(cookies) { 
-	
+	console.log("Cookies Exist: " + cookies);
 	var instagramaccess_token = getCookie('instagramaccess_token');
 	var facebookaccess_token = getCookie('fbsr_879355528897757');
 	
 	if (facebookaccess_token != '' && instagramaccess_token != '') {
+		console.log("Facebook Token: " + facebookaccess_token);
+		console.log("Instagram Token: " + instagramaccess_token);
 		
 		// Get Posts
 		var token = "instagram_token=" + instagramaccess_token; 
@@ -70,8 +72,7 @@ if(cookies) {
 		$('#elasticstack').html('<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>');
 
 	}
-}
-else {
+} else {
 	// Get Instagram sign in
 		$('#elasticstack').html('<li><p><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></p></li>');
 }
