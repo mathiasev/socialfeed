@@ -55,7 +55,7 @@ class Stack {
 		$posts = $posts->data;
 		
 		foreach ($posts as $post):
-			$this->posts[] = new Post('', $post->caption->text, $post->images->standard_resolution->url, $post->caption->createdtime, $post->user->username);
+			$this->posts[] = new Post('', $post->caption->text, $post->images->standard_resolution->url, $post->caption->created_time, $post->user->username);
 		endforeach;
 	}
 	
