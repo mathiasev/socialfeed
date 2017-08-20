@@ -3,7 +3,7 @@
 var cookies = document.cookie;
 if( cookies) {
 	console.log(cookies);
-	var token = getCookie(instagramaccess_token);
+	var token = getCookie('instagramaccess_token');
 	token = "access_token=" + token; 
 	  var goURL = 'go.php?token=' + token;
   $.ajax({
