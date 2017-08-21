@@ -101,5 +101,5 @@ class Post {
 		return $this->author;
 	}
 }
-$stack = new Stack();
+
 ?>
