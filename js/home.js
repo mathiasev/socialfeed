@@ -2,7 +2,7 @@
 if(window.location.hash) {
   // Fragment exists
   var hash = window.location.hash;
-  
+  console.log(hash);
   document.cookie = "instagram" + hash.substring(1);
   
  	var instagramaccess_token = getCookie('instagram');

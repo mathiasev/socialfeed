@@ -24,7 +24,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="js/draggabilly.pkgd.min.js"></script>
 		<script src="js/elastiStack.js"></script>
-		<script src="js/step2.js"></script>
 		<script>
 			new ElastiStack( document.getElementById( 'elasticstack' ) );
 		</script>
