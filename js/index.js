@@ -27,7 +27,7 @@
 		console.log("Facebook Token: " + facebookaccess_token);
 		
 		var token = facebookaccess_token.substring(20);
-		var goURL = 'go.php?facebook=' + token;
+		var goURL = 'go.php?facebook_token=' + token;
 		
 		$.ajax({
 		  url: goURL,

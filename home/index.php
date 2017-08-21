@@ -17,14 +17,14 @@
 		<div class="container">
 			<!-- Top Navigation -->
 			<ul id="elasticstack" class="elasticstack">
-				<li><p><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/step2.php&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes" id="InstagramLogin">Log into Instagram</a></p></li>
+				<li>Let's Start</li>
 				
 			</ul>
 		</div><!-- /container -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="js/draggabilly.pkgd.min.js"></script>
 		<script src="js/elastiStack.js"></script>
-		<script src="js/step2.js"></script>
+		<script src="js/home.js"></script>
 		<script>
 			new ElastiStack( document.getElementById( 'elasticstack' ) );
 		</script>
