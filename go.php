@@ -9,6 +9,7 @@ class Stack {
 	
 	/* Sets the Instagram token from user */
 	function setInstagramAccessToken($_accessToken) {
+		print_r($_accessToken);
 		$this->instaAccessToken = 'access_token=' . $_accessToken;
 	}
 	
