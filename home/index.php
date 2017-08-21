@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="../css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="../css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+		<script src="../js/modernizr.custom.js"></script>
 	</head>
 	<body>
 		<div class="container">
