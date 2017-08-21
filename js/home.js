@@ -4,13 +4,14 @@ if(window.location.hash) {
   var hash = window.location.hash;
   var token = hash.substring(1);
   
-var goURL = 'go.php?instagram' + token;
+var goURL = '../go.php?instagram' + token;
 		console.log(goURL);
 		$.ajax({
 		  url: goURL,
 		  type: 'POST'
 		})
 		.done(function( data ) {
+			window.location.hash = "";
 console.log("Ready");
 		});
 }
