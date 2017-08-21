@@ -17,21 +17,14 @@
 		<div class="container">
 			<!-- Top Navigation -->
 			<ul id="elasticstack" class="elasticstack">
-				
-					<!--if( isset($_GET['access_token']) ): 
-						$stack->setAuthCode($_GET['access_token']); 
-					else:
-						echo ''; 
-					endif; 
-					
-					if($stack->isAlive()): $stack->getPosts(); endif; -->
+				<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>
 				
 			</ul>
 		</div><!-- /container -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="js/draggabilly.pkgd.min.js"></script>
 		<script src="js/elastiStack.js"></script>
-		<script src="js/custom.js"></script>
+		<script src="js/index.js"></script>
 		<script>
 			new ElastiStack( document.getElementById( 'elasticstack' ) );
 		</script>
