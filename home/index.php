@@ -8,9 +8,9 @@
 		<title>Stack</title>
 		<meta name="description" content="Stack - The Easy Social Aggregator" />
 		<meta name="author" content="Mathias Everson" />
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -22,9 +22,9 @@
 			</ul>
 		</div><!-- /container -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="js/draggabilly.pkgd.min.js"></script>
-		<script src="js/elastiStack.js"></script>
-		<script src="js/home.js"></script>
+		<script src="../js/draggabilly.pkgd.min.js"></script>
+		<script src="../js/elastiStack.js"></script>
+		<script src="../js/home.js"></script>
 		<script>
 			new ElastiStack( document.getElementById( 'elasticstack' ) );
 		</script>

@@ -17,7 +17,6 @@ if(window.location.hash) {
 		  type: 'POST'
 		})
 		.done(function( data ) {
-window.location.replace('/home');
-
+console.log("Ready");
 		});
 }
