@@ -4,7 +4,7 @@ if(window.location.hash) {
 	var hash = window.location.hash;
 	var token = hash.substring(1);
   
-	var goURL = '../go.php?instagram' + token;
+	var goURL = '../go.php?' + token;
 	
 	$.ajax({
 		url: goURL,
