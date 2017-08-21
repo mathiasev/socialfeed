@@ -22,7 +22,8 @@
     logInWithFacebook = function() {
     FB.login(function(response) {
       if (response.authResponse) {
-        
+        	var facebookaccess_token = getCookie('fbsr_879355528897757');
+
 		console.log("Facebook Token: " + facebookaccess_token);
 		
 		var token = facebookaccess_token.substring(20);
@@ -42,3 +43,9 @@ window.location.replace('step2.php');
     });
     return false;
   };
+  
+  function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
