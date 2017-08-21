@@ -1,4 +1,4 @@
-<?php session_start(); include 'class.php'; $stack = new Stack();?>
+<?php  include 'class.php'; session_start(); $stack = new Stack(); $_SESSION['STACK'] = $stack; ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
