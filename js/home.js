@@ -2,16 +2,10 @@
 if(window.location.hash) {
   // Fragment exists
   var hash = window.location.hash;
-  console.log(hash);
-  document.cookie = "instagram" + hash.substring(1);
+  var token = hash.substring(1);
   
- 	var instagramaccess_token = getCookie('instagram');
-
-		console.log("Instagram Token: " + instagramaccess_token);
-		
-		var token = instagramaccess_token.substring(20);
-		var goURL = 'go.php?instagram_token=' + token;
-		
+var goURL = 'go.php?instagram' + token;
+		console.log(goURL);
 		$.ajax({
 		  url: goURL,
 		  type: 'POST'
