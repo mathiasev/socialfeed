@@ -24,7 +24,7 @@
       if (response.authResponse) {
         	var facebookaccess_token = response.authResponse.accessToken;
 
-		console.log("Facebook Token: " + facebookaccess_token);
+		alert("Facebook Token: " + facebookaccess_token);
 		
 		//var token = facebookaccess_token.substring(20);
 		var goURL = 'go.php?facebook_token=' + facebookaccess_token;
