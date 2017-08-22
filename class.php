@@ -50,11 +50,11 @@ class Stack {
 		$feed = $feed->data;
 		
 		foreach ($feed as $post) :
-			print_r($post->attachments);
+			//print_r($post->attachments);
 			$this->posts[] = new Post (
 				'', 									//Tite
 				(isset($post->message))?$post->message: '', 						//Content
-				(isset($post->attachments->data->media->image->src))?$post->attachments->data->media->image->src:'',	//Image
+				(isset($post->attachments->data[0]->media->image->src))?$post->attachments->data[0]->media->image->src:'',	//Image
 				$post->created_time,					//Date
 				'Me'									//Author
 			);
