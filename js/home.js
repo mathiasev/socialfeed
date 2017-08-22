@@ -17,7 +17,7 @@ if(window.location.hash) {
 }
 
 
-getPosts();
+getPOSTS();
 
 function getPOSTS() {
 	$.ajax({
