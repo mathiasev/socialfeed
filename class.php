@@ -50,6 +50,7 @@ class Stack {
 		$feed = $feed->data;
 		
 		foreach ($feed as $post) :
+			print_r($post->attachments);
 			$this->posts[] = new Post (
 				'', 									//Tite
 				(isset($post->message))?$post->message: '', 						//Content
