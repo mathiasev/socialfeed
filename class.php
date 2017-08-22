@@ -53,7 +53,7 @@ class Stack {
 			$this->posts[] = new Post (
 				'', 									//Tite
 				(isset($post->message))?$post->message: '', 						//Content
-				(isset($post->attachments->media->image->src))?$post->attachments->media->image->src:'',	//Image
+				(isset($post->attachments->data->media->image->src))?$post->attachments->data->media->image->src:'',	//Image
 				$post->created_time,					//Date
 				'Me'									//Author
 			);
