@@ -34,7 +34,7 @@ class Stack {
 	
 	/* Get Data from Facebook */
 	private function getFacebookEndpoint($_req_url, $_req_param) {
-		$authURL = 'https://graph.facebook.com/v2.10/' . $_req_url . '?' . http_build_query($_req_param) . '&' . $this->facebookAccessToken;
+		$authURL = 'https://graph.facebook.com/v2.10/' . $_req_url . '?' . htmlspecialchars($_req_param) . '&' . $this->facebookAccessToken;
         echo authURL;
 		$ch = curl_init(); 
         curl_setopt($ch, CURLOPT_URL, $authURL); 
