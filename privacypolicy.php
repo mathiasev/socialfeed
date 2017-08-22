@@ -15,7 +15,8 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="">
+			<div style="width: 70vw;margin: auto;margin-top: 110px;padding: 70px;background-color: #ffffff;color: #4c4c4c;">
+			<div style="height: 60vh;overflow-y: scroll;" >
 				<h1>PRIVACY STATEMENT</h1>
 
 ----
@@ -75,8 +76,7 @@ When you login with Facebook or Instagram, you login directly with the social ne
 <h2>SECTION 8 - CHANGES TO THIS PRIVACY POLICY</h2>
 
 <p>We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.</p>
-
-<p>If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p>
+</div>
 
 			</div>
 		</div><!-- /container -->
