@@ -1,12 +1,17 @@
 <?php /* Overall Stack wrapper */
 class Stack {
 	private $instaAccessToken = 'No Token Set';
+	private $facebookAccessToken = 'No Token Set';
 	private $posts = array();
 	
 	/* Sets the Instagram token from user */
 	function setInstagramAccessToken($_accessToken) {
-		print_r($_accessToken);
 		$this->instaAccessToken = 'access_token=' . $_accessToken;
+	}
+	
+	/* Sets the Facebook token from user */
+	function setFacebookAccessToken($_accessToken) {
+		$this->facebookAccessToken = $_accessToken;
 	}
 	
 	/* Get Data from Instagram */
@@ -26,6 +31,8 @@ class Stack {
 	function getPosts() {
 		
 		$this->getInstagramPosts();
+		
+		print_r($stack);
 				
 		foreach ($this->posts as $post) :
 			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><h2>%s</h2><p>%s</p></div></li>', $post->theImage(), $post->theTitle(), $post->theContent());
