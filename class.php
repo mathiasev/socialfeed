@@ -55,8 +55,8 @@ class Stack {
 				'', 									//Tite
 				$post->message, 						//Content
 				$post->attachments->media->image->src,	//Image
-				$post->created_time,				//Date
-				$post->'Me'//Author
+				$post->created_time,					//Date
+				'Me'									//Author
 			);
 		endforeach;
 	}
