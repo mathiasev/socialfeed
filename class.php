@@ -47,13 +47,12 @@ class Stack {
 	private function getFacebookPosts() {
 		
 		$feed = $this->getFacebookEndpoint('me/feed', 'fields=attachments{title,type,url,description,media},message,type,created_time&limit=20');
-		print_r($feed);
 		$feed = $feed->data;
 		
 		foreach ($feed as $post) :
 			$this->posts[] = new Post (
 				'', 									//Tite
-				$post->message, 						//Content
+				(isset($post->message))?$post->message: '', 						//Content
 				(isset($post->attachments->media->image->src))?$post->attachments->media->image->src:'',	//Image
 				$post->created_time,					//Date
 				'Me'									//Author
