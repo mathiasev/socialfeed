@@ -22,12 +22,12 @@
     logInWithFacebook = function() {
     FB.login(function(response) {
       if (response.authResponse) {
-        	var facebookaccess_token = getCookie('fbsr_879355528897757');
+        	var facebookaccess_token = response.authResponse.accessToken;
 
 		console.log("Facebook Token: " + facebookaccess_token);
 		
-		var token = facebookaccess_token.substring(20);
-		var goURL = 'go.php?facebook_token=' + token;
+		//var token = facebookaccess_token.substring(20);
+		var goURL = 'go.php?facebook_token=' + facebookaccess_token;
 		
 		$.ajax({
 		  url: goURL,
