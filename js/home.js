@@ -17,6 +17,8 @@ if(window.location.hash) {
 }
 
 
+getPosts();
+
 function getPOSTS() {
 	$.ajax({
 	url: '../go.php?getPosts=true',
