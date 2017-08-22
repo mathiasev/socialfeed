@@ -11,7 +11,7 @@ class Stack {
 	
 	/* Sets the Facebook token from user */
 	function setFacebookAccessToken($_accessToken) {
-		$this->facebookAccessToken = $_accessToken;
+		$this->facebookAccessToken = 'access_token=' . $_accessToken;
 	}
 	
 	/* Get Data from Instagram */
@@ -27,15 +27,43 @@ class Stack {
 		return json_decode($output);
 	}
 	
+	/* Get Data from Facebook */
+	private function getFacebookEndpoint($_req_url, $_req_param) {
+		$authURL = 'https://graph.facebook.com/v2.10/' . $_req_url . '?' . $_req_param . '&' . $this->facebookAccessToken;
+        
+		$ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, $authURL); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        $output = curl_exec($ch); 
+        curl_close($ch);
+		
+		return json_decode($output);
+	}
+	
+	private function getFacebookPosts() {
+		
+		$feed = $this->getFacebookEndpoint('me/feed', 'fields=attachments{title,type,url,description,media},message,type,created_time&limit=20');
+		$feed = $feed->data;
+		
+		foreach ($feed as $post) :
+			$this->posts[] = new Post (
+				'', 									//Tite
+				$post->message, 						//Content
+				$post->attachments->media->image->src,	//Image
+				$post->created_time,				//Date
+				$post->'Me'//Author
+			);
+		endforeach;
+	}
+	
 	/* Returns posts from friends */
 	function getPosts() {
 		
 		$this->getInstagramPosts();
-		
-		print_r($this);
+		$this->getFacebookPosts();
 				
 		foreach ($this->posts as $post) :
-			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><h2>%s</h2><p>%s</p></div></li>', $post->theImage(), $post->theTitle(), $post->theContent());
+			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
 		endforeach;
 	}
 	
@@ -107,6 +135,7 @@ class Post {
 	function theAuthor() {
 		return $this->author;
 	}
+	
 }
 
 ?>
