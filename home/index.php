@@ -1,4 +1,4 @@
-<?php include '../class.php' ?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>

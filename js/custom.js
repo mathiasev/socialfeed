@@ -45,16 +45,7 @@
     });
     return false;
   };
-
-/* Set Instagram cookie if code in url */
-if(window.location.hash) {
-  // Fragment exists
-  var hash = window.location.hash;
-  
-  document.cookie = "instagram" + hash.substring(1);
-  
  
-} 
  
 var cookies = document.cookie;
 	var instagramaccess_token = getCookie('instagramaccess_token');

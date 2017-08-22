@@ -1,4 +1,6 @@
-<?php  require('class.php'); session_start(); $stack = new Stack(); $_SESSION['STACK'] = $stack; ?>
+<?php  ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); require('class.php'); session_start(); $stack = new Stack(); $_SESSION['STACK'] = $stack; ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>

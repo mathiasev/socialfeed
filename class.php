@@ -1,4 +1,9 @@
-<?php /* Overall Stack wrapper */
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+/* Overall Stack wrapper */
 class Stack {
 	private $instaAccessToken = 'No Token Set';
 	private $facebookAccessToken = 'No Token Set';
