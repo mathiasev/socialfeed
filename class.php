@@ -115,7 +115,7 @@ class Stack {
 }
 
 class Post {
-	private $title, $content, $image, $postdate, $author, $brand;
+	private $title, $content, $image, $postdate, $author, $pbrand;
 	
 	function __construct ($_title, $_content, $_image, $_date, $_author, $_brand) {
 		$this->title 	= $_title;
@@ -123,7 +123,7 @@ class Post {
 		$this->image	= $_image;
 		$this->postdate	= $_date;
 		$this->author	= $_author;
-		$this->brand 	= $_brand;
+		$this->pbrand 	= $_brand;
 	
 	}
 	
@@ -133,7 +133,7 @@ class Post {
 	}
 	
 	function theBrand() {
-		return $this->brand;
+		return $this->pbrand;
 	}
 	
 	function theTitle() {
