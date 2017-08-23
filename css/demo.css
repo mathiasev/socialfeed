@@ -54,6 +54,10 @@ body {
 	padding:20px;
 }
 
+.brand {
+	padding: 10px 20px;color: #ffffff;text-transform: uppercase;font-weight: 900;
+}
+
 @media screen and (max-width: 600px) {
 	#elasticstack {
 		width: 90vw;
