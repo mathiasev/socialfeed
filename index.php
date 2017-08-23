@@ -19,7 +19,7 @@ error_reporting(E_ALL); require('class.php'); session_start(); $stack = new Stac
 		<div class="container">
 			<!-- Top Navigation -->
 			<ul id="elasticstack" class="elasticstack">
-				<li><p><a href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>
+				<li style="background-color: #3b5998; color: #ffffff; display: table;"><p style="display: table-cell; text-align: center; vertical-align: middle;"><a style="color: #fff; font-weight: 700; text-decoration: none; font-size: 1.2em;" href="#" onClick="logInWithFacebook()">Log In to Facebook</a></p></li>
 				
 			</ul>
 		</div><!-- /container -->
