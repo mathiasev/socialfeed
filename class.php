@@ -113,7 +113,7 @@ class Stack {
 }
 
 class Post {
-	private $title, $content, $image, $postdate, $author, $_brand;
+	private $title, $content, $image, $postdate, $author, $brand;
 	
 	function __construct ($_title, $_content, $_image, $_date, $_author, $_brand) {
 		$this->title 	= $_title;
@@ -121,7 +121,7 @@ class Post {
 		$this->image	= $_image;
 		$this->postdate	= $_date;
 		$this->author	= $_author;
-		$this->format 	= $_format;
+		$this->brand 	= $_brand;
 	}
 	
 	function theBrandColour() {
@@ -137,7 +137,7 @@ class Post {
 	}
 	
 	function theBrand() {
-		return ucfirst($this->format);
+		return ucfirst($this->brand);
 	}
 	
 	function theTitle() {
