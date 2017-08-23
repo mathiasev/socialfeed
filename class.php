@@ -57,7 +57,7 @@ class Stack {
 				(isset($post->attachments->data[0]->media->image->src))?$post->attachments->data[0]->media->image->src:'',	//Image
 				$post->created_time,																						//Date
 				'Me',																										//Author
-				'Facebook'																									//Format
+				'facebook'																									//Format
 			);
 		endforeach;
 	}
@@ -69,7 +69,7 @@ class Stack {
 		$this->getFacebookPosts();
 				
 		foreach ($this->posts as $post) :
-			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
+			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="brand" style="background-color:%s;">%s</div><div class="caption"><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theBrandColour(), $post->theBrand(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
 		endforeach;
 	}
 	
@@ -113,9 +113,9 @@ class Stack {
 }
 
 class Post {
-	private $title, $content, $image, $postdate, $author, $_format;
+	private $title, $content, $image, $postdate, $author, $_brand;
 	
-	function __construct ($_title, $_content, $_image, $_date, $_author, $_format) {
+	function __construct ($_title, $_content, $_image, $_date, $_author, $_brand) {
 		$this->title 	= $_title;
 		$this->content 	= $_content;
 		$this->image	= $_image;
@@ -124,8 +124,20 @@ class Post {
 		$this->format 	= $_format;
 	}
 	
-	function theFormat() {
-		return $this->format;
+	function theBrandColour() {
+		switch ($this->brand):
+			case 'facebook':
+				return '#3b5998';
+				break;
+				
+			case 'instagram':
+				return '#833ab4';
+				break;			
+		endswitch;
+	}
+	
+	function theBrand() {
+		return ucfirst($this->format);
 	}
 	
 	function theTitle() {
