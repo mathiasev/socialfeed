@@ -126,7 +126,7 @@ class Post {
 		$this->author	= $_author;
 		$this->brand 	= $_brand;
 	
-	
+	}
 	
 	function theBrandColour() {
 		switch ($this->brand):
