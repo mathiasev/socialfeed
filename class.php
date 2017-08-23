@@ -50,9 +50,6 @@ class Stack {
 		$feed = $feed->data;
 		
 		foreach ($feed as $post) :
-			echo '<pre>';
-			print_r($post->attachments);
-			echo '</pre>';
 			$this->posts[] = new Post (
 				'', 																										//Tite
 				(isset($post->message))?$post->message: '', 																//Content
@@ -69,11 +66,11 @@ class Stack {
 		
 		$this->getInstagramPosts();
 		$this->getFacebookPosts();
+		echo '<pre>';
+		print_r($this->posts);
+		echo '</pre>';
 				
 		foreach ($this->posts as $post) :
-			echo '<li>';
-			print_r($post);
-			echo '</li>';
 			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><div class="brand" style="background-color:%s;">%s</div><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theBrandColour(), $post->theBrand(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
 		endforeach;
 	}
