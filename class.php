@@ -71,7 +71,7 @@ class Stack {
 		echo '</pre>';   d*/
 				
 		foreach ($this->posts as $post) :
-			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><div class="brand" style="background-color:%s;">%s</div><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theBrandColour(), $post->theBrand(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
+			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><div class="brand" style="background-color:%s;">%s</div><div class="bodyText"><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></div></li>', $post->theImage(), $post->theBrandColour(), $post->theBrand(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
 		endforeach;
 	}
 	

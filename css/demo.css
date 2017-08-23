@@ -47,10 +47,12 @@ body {
 .caption {
     width: 40%;
     float: right;
-    padding: 20px;
 	overflow: hidden;
 }
 
+.bodyText {
+	padding:20px;
+}
 
 @media screen and (max-width: 600px) {
 	#elasticstack {
