@@ -56,7 +56,7 @@ class Stack {
 				(isset($post->message))?$post->message: '', 																//Content
 				(isset($post->attachments->data[0]->media->image->src))?$post->attachments->data[0]->media->image->src:'',	//Image
 				$post->created_time,																						//Date
-				'Me',																										//Author
+				'facebook',																										//Author
 				'facebook'																									//Format
 			);
 		endforeach;
