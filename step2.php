@@ -17,7 +17,7 @@
 		<div class="container">
 			<!-- Top Navigation -->
 			<ul id="elasticstack" class="elasticstack">
-				<li><p><a href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/home&response_type=token&scope=basic+public_content+follower_list+relationships" id="InstagramLogin">Log into Instagram</a></p></li>
+				<li style="background-color: #833ab4; color: #ffffff; display: table;"><p style="display: table-cell; text-align: center; vertical-align: middle;"><a style="color: #fff; font-weight: 700; text-decoration: none; font-size: 1.2em;"  href="https://api.instagram.com/oauth/authorize/?client_id=ddc788c63b2a444ca2898f6acaa88780&redirect_uri=http://13.59.66.63/socialfeed/home&response_type=token&scope=basic+public_content+follower_list+relationships" id="InstagramLogin">Log into Instagram</a></p></li>
 				
 			</ul>
 		</div><!-- /container -->
