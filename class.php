@@ -121,8 +121,7 @@ class Post {
 		$this->image	= $_image;
 		$this->postdate	= $_date;
 		$this->author	= $_author;
-		$this->brand 	= $_brand
-		;
+		$this->brand 	= $_brand;
 	}
 	
 	function theBrandColour() {
