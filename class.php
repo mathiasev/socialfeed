@@ -69,6 +69,9 @@ class Stack {
 		$this->getFacebookPosts();
 				
 		foreach ($this->posts as $post) :
+			echo '<li>';
+			print_r($post);
+			echo '</li>';
 			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><div class="brand" style="background-color:%s;">%s</div><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theBrandColour(), $post->theBrand(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
 		endforeach;
 	}
@@ -122,7 +125,8 @@ class Post {
 		$this->postdate	= $_date;
 		$this->author	= $_author;
 		$this->brand 	= $_brand;
-	}
+	
+	
 	
 	function theBrandColour() {
 		switch ($this->brand):
