@@ -52,11 +52,12 @@ class Stack {
 		foreach ($feed as $post) :
 			//print_r($post->attachments);
 			$this->posts[] = new Post (
-				'', 									//Tite
-				(isset($post->message))?$post->message: '', 						//Content
+				'', 																										//Tite
+				(isset($post->message))?$post->message: '', 																//Content
 				(isset($post->attachments->data[0]->media->image->src))?$post->attachments->data[0]->media->image->src:'',	//Image
-				$post->created_time,					//Date
-				'Me'									//Author
+				$post->created_time,																						//Date
+				'Me',																										//Author
+				'Facebook'																									//Format
 			);
 		endforeach;
 	}
@@ -97,7 +98,8 @@ class Stack {
 									(isset($post->caption->text)) ? $post->caption->text : '',
 									$post->images->standard_resolution->url,
 									$post->created_time, 
-									$post->user->username);
+									$post->user->username,
+									'instagram');
 		endforeach;
 	}
 	
@@ -111,14 +113,19 @@ class Stack {
 }
 
 class Post {
-	private $title, $content, $image, $postdate, $author;
+	private $title, $content, $image, $postdate, $author, $_format;
 	
-	function __construct ($_title, $_content, $_image, $_date, $_author) {
+	function __construct ($_title, $_content, $_image, $_date, $_author, $_format) {
 		$this->title 	= $_title;
 		$this->content 	= $_content;
 		$this->image	= $_image;
 		$this->postdate	= $_date;
 		$this->author	= $_author;
+		$this->format 	= $_format;
+	}
+	
+	function theFormat() {
+		return $this->format;
 	}
 	
 	function theTitle() {
