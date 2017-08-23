@@ -129,19 +129,12 @@ class Post {
 	}
 	
 	function theBrandColour() {
-		switch ($this->brand):
-			case 'facebook':
-				return '#3b5998';
-				break;
-				
-			case 'instagram':
-				return '#833ab4';
-				break;			
-		endswitch;
+		return '#3b5998';
+		
 	}
 	
 	function theBrand() {
-		return ucfirst($this->brand);
+		return $this->brand;
 	}
 	
 	function theTitle() {
