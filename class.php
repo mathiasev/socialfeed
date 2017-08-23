@@ -68,7 +68,7 @@ class Stack {
 		$this->getFacebookPosts();
 		/* echo '<pre>';
 		print_r($this->posts);
-		echo '</pre>'; */
+		echo '</pre>';   d*/
 				
 		foreach ($this->posts as $post) :
 			echo sprintf('<li><div class="imageHolder" style="background-image: url(\'%s\');"></div><div class="caption"><div class="brand" style="background-color:%s;">%s</div><h2>%s</h2><p>%s</p><p><small>%s on %s</small></p></div></li>', $post->theImage(), $post->theBrandColour(), $post->theBrand(), $post->theTitle(), $post->theContent(), $post->theAuthor(), $post->thePostDate());
