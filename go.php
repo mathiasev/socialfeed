@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+echo '<!--'; print_r($_SESSION); echo '-->';
 
 if (isset($_GET['access_token'])) 	: 	$stack = $_SESSION['STACK']; 
 										$stack->setInstagramAccessToken($_GET['access_token']); 
